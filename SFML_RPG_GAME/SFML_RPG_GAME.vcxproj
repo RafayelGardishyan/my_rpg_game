@@ -158,10 +158,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="game_graphics.h" />
+    <ClInclude Include="game_logics.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="tile.h" />
+    <ClInclude Include="tile_type.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game_graphics.cpp" />
+    <ClCompile Include="game_logics.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -169,6 +173,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SFML_RPG_GAME.cpp" />
+    <ClCompile Include="tile.cpp" />
+    <ClCompile Include="tile_type.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
