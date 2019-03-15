@@ -20,5 +20,8 @@ private:
 	long m_n_frames;
 	game_logics m_game;
 	camera m_camera;
+
+	void process_keyboard_events(sf::Event evnt);
+	void process_mouse_events(sf::Event evnt);
 };
 

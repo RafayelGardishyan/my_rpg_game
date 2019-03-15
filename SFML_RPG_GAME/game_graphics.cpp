@@ -34,6 +34,22 @@ void game_graphics::update()
 	//m_camera.move(sf::Vector2f(32 * deltatime.asSeconds(), 32 * deltatime.asSeconds()));
 }
 
+void game_graphics::process_keyboard_events(sf::Event evnt)
+{
+	switch (evnt.key.code)
+	{
+	case sf::Keyboard::W:
+		m_camera.move(sf::Vector2f(50 * deltatime.asSeconds(), 50 * deltatime.asSeconds()));
+	default:
+		break;
+	}
+}
+
+void game_graphics::process_mouse_events(sf::Event evnt)
+{
+	return;
+}
+
 void game_graphics::run()
 {
 	while (m_window.isOpen())
@@ -47,9 +63,18 @@ void game_graphics::run()
 		{
 			switch (evnt.type)
 			{
-			case evnt.Closed:
+			case sf::Event::Closed:
 				m_window.close();
 				break;
+
+			case sf::Event::KeyPressed:
+				process_keyboard_events(evnt);
+				break;
+
+			case sf::Event::MouseButtonPressed:
+				process_mouse_events(evnt);
+				break;
+
 			default:
 				break;
 			}
