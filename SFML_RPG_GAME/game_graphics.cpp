@@ -1,10 +1,11 @@
 #include "pch.h"
 #include "game_graphics.h"
 #include <vector>
+#include <iostream>
 
 
 game_graphics::game_graphics()
-	: m_window{sf::VideoMode(512, 512), "RPG Game", sf::Style::Default}
+	: m_window{sf::VideoMode(512, 512), "RPG Game", sf::Style::Close}
 {}
 
 void game_graphics::draw()
@@ -17,7 +18,7 @@ void game_graphics::draw()
 		sf::RectangleShape rect;
 		rect.setSize(sf::Vector2f(32, 32));
 		rect.setFillColor(get_tile_color(current.get_type()));
-		rect.setPosition(sf::Vector2f(current.get_pos().x * 32, current.get_pos().y * 32));
+		rect.setPosition(sf::Vector2f((current.get_pos().x * 32) + m_camera.get_pos().x, (current.get_pos().y * 32) + m_camera.get_pos().x));
 
 		m_window.draw(rect);
 	}
@@ -26,10 +27,18 @@ void game_graphics::draw()
 
 }
 
+void game_graphics::update()
+{
+	m_camera.move(sf::Vector2f(50 * deltatime.asSeconds(), 50 * deltatime.asSeconds()));
+}
+
 void game_graphics::run()
 {
 	while (m_window.isOpen())
 	{
+		// Set deltatime
+		deltatime = clock.restart();
+
 		// Process events
 		sf::Event evnt;
 		while (m_window.pollEvent(evnt))
@@ -43,6 +52,9 @@ void game_graphics::run()
 				break;
 			}
 		}
+
+		// Update Objects
+		update();
 
 		//Clear Background
 		m_window.clear(sf::Color::Black);

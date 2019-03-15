@@ -18,4 +18,3 @@ private:
 	int m_y;
 	tile_type m_type;
 };
-

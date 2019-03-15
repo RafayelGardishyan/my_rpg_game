@@ -157,13 +157,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="game_graphics.h" />
     <ClInclude Include="game_logics.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="tile.h" />
+    <ClInclude Include="tile_object.h" />
+    <ClInclude Include="tile_object_type.h" />
     <ClInclude Include="tile_type.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="game_graphics.cpp" />
     <ClCompile Include="game_logics.cpp" />
     <ClCompile Include="pch.cpp">
@@ -174,6 +178,8 @@
     </ClCompile>
     <ClCompile Include="SFML_RPG_GAME.cpp" />
     <ClCompile Include="tile.cpp" />
+    <ClCompile Include="tile_object.cpp" />
+    <ClCompile Include="tile_object_type.cpp" />
     <ClCompile Include="tile_type.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
