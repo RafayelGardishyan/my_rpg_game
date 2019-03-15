@@ -30,3 +30,14 @@ void tile::set_type(tile_type type)
 {
 	m_type = type;
 }
+
+std::vector<std::vector<tile_type>> tile::map1 = {
+	{tile_type::grass, tile_type::stone, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass},
+	{tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass},
+	{tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass},
+    {tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass},
+	{tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass},
+	{tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass},
+	{tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass},
+	{tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass, tile_type::grass}
+};

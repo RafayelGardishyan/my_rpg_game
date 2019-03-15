@@ -4,6 +4,7 @@
 class tile
 {
 public:
+	static std::vector<std::vector<tile_type>> map1;
 	tile();
 	sf::Vector2i get_pos();
 	tile_type get_type();

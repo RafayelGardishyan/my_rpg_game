@@ -6,7 +6,9 @@
 
 game_graphics::game_graphics()
 	: m_window{sf::VideoMode(512, 512), "RPG Game", sf::Style::Close}
-{}
+{
+	m_camera.move(sf::Vector2f(-32, -32));
+}
 
 void game_graphics::draw()
 {
@@ -18,7 +20,7 @@ void game_graphics::draw()
 		sf::RectangleShape rect;
 		rect.setSize(sf::Vector2f(32, 32));
 		rect.setFillColor(get_tile_color(current.get_type()));
-		rect.setPosition(sf::Vector2f((current.get_pos().x * 32) + m_camera.get_pos().x, (current.get_pos().y * 32) + m_camera.get_pos().x));
+		rect.setPosition(sf::Vector2f((current.get_pos().x * 32) - m_camera.get_pos().x, (current.get_pos().y * 32) - m_camera.get_pos().x));
 
 		m_window.draw(rect);
 	}
@@ -29,7 +31,7 @@ void game_graphics::draw()
 
 void game_graphics::update()
 {
-	m_camera.move(sf::Vector2f(50 * deltatime.asSeconds(), 50 * deltatime.asSeconds()));
+	//m_camera.move(sf::Vector2f(32 * deltatime.asSeconds(), 32 * deltatime.asSeconds()));
 }
 
 void game_graphics::run()

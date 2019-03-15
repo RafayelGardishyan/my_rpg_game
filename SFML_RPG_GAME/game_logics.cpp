@@ -4,7 +4,8 @@
 
 game_logics::game_logics()
 {
-	create_test_tiles();
+	//create_test_tiles();
+	create_map(tile::map1);
 }
 
 
@@ -39,4 +40,19 @@ void game_logics::create_test_tiles()
 	t3.set_pos(sf::Vector2i(0, 1));
 	t3.set_type(tile_type::grass);
 	m_tiles.push_back(t3);
+}
+
+void game_logics::create_map(std::vector<std::vector<tile_type>> map)
+{
+	for (unsigned int i = 0; i < map.size(); i++)
+	{
+		std::vector<tile_type> current_row = map.at(i);
+		for (unsigned int j = 0; j < current_row.size(); j++)
+		{
+			tile t;
+			t.set_pos(sf::Vector2i(j, i));
+			t.set_type(current_row.at(j));
+			m_tiles.push_back(t);
+		}
+	}
 }

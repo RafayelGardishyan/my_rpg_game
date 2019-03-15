@@ -13,6 +13,7 @@ public:
 
 private:
 	void create_test_tiles();
+	void create_map(std::vector<std::vector<tile_type>> map);
 	std::vector<tile> m_tiles;
 };
 
