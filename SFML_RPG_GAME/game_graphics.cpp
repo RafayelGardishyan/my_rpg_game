@@ -38,11 +38,17 @@ void game_graphics::process_keyboard_events(sf::Event evnt)
 {
 	switch (evnt.key.code)
 	{
-	case sf::Keyboard::W:
-		m_camera.move(sf::Vector2f(50 * deltatime.asSeconds(), 50 * deltatime.asSeconds()));
-	default:
-		break;
-	}
+//	case sf::Keyboard::W:
+//		m_camera.move(sf::Vector2f(50, 0));
+//	case sf::Keyboard::S:
+//		m_camera.move(sf::Vector2f(-50, 0));
+//	case sf::Keyboard::A:
+//		m_camera.move(sf::Vector2f(0, 50));
+//	case sf::Keyboard::D:
+//		m_camera.move(sf::Vector2f(0, -50));
+//	default:
+//		break;
+//	}
 }
 
 void game_graphics::process_mouse_events(sf::Event evnt)
