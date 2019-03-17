@@ -48,7 +48,7 @@ void game_graphics::process_keyboard_events(sf::Event evnt)
 //		m_camera.move(sf::Vector2f(0, -50));
 //	default:
 //		break;
-//	}
+	}
 }
 
 void game_graphics::process_mouse_events(sf::Event evnt)
