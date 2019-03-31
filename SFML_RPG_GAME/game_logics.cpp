@@ -56,3 +56,32 @@ void game_logics::create_map(std::vector<std::vector<tile_type>> map)
 		}
 	}
 }
+
+void game_logics::process_mouse_events(sf::Event evnt)
+{
+	switch (evnt.type)
+	{
+	case sf::Event::MouseButtonPressed:
+		if (evnt.mouseButton.button == sf::Mouse::Left)
+		{
+			for (unsigned int i = 0; i < m_tiles.size(); i++)
+			{
+				tile current = m_tiles.at(i);
+				int x = evnt.mouseButton.x % 32;
+				int y = evnt.mouseButton.y % 32;
+
+				if (current.get_pos().x == x && current.get_pos().y == y)
+				{
+					selected_tile = i;
+				}
+				else {
+					selected_tile = -1;
+				}
+
+			}
+		}
+		break;
+	default:
+		break;
+	}
+}

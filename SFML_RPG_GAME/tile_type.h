@@ -6,6 +6,7 @@ enum class tile_type
 {
 	grass,
 	stone,
+	dirt,
 	water
 };
 

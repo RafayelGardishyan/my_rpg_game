@@ -7,7 +7,7 @@
 game_graphics::game_graphics()
 	: m_window{sf::VideoMode(512, 512), "RPG Game", sf::Style::Close}
 {
-	m_camera.move(sf::Vector2f(-32, -32));
+//	m_camera.move(sf::Vector2f(-32, -32));
 }
 
 void game_graphics::draw()
@@ -22,6 +22,12 @@ void game_graphics::draw()
 		rect.setFillColor(get_tile_color(current.get_type()));
 		rect.setPosition(sf::Vector2f((current.get_pos().x * 32) - m_camera.get_pos().x, (current.get_pos().y * 32) - m_camera.get_pos().x));
 
+		if (i == m_game.selected_tile)
+		{
+			rect.setOutlineColor(sf::Color(255, 255, 0));
+			rect.setOutlineThickness(5);
+		}
+
 		m_window.draw(rect);
 	}
 
@@ -31,28 +37,18 @@ void game_graphics::draw()
 
 void game_graphics::update()
 {
-	//m_camera.move(sf::Vector2f(32 * deltatime.asSeconds(), 32 * deltatime.asSeconds()));
 }
 
 void game_graphics::process_keyboard_events(sf::Event evnt)
 {
 	switch (evnt.key.code)
 	{
-//	case sf::Keyboard::W:
-//		m_camera.move(sf::Vector2f(50, 0));
-//	case sf::Keyboard::S:
-//		m_camera.move(sf::Vector2f(-50, 0));
-//	case sf::Keyboard::A:
-//		m_camera.move(sf::Vector2f(0, 50));
-//	case sf::Keyboard::D:
-//		m_camera.move(sf::Vector2f(0, -50));
-//	default:
-//		break;
 	}
 }
 
 void game_graphics::process_mouse_events(sf::Event evnt)
 {
+	m_game.process_mouse_events(evnt);
 	return;
 }
 

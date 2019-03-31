@@ -12,6 +12,8 @@ sf::Color get_tile_color(tile_type type)
 		return sf::Color(150, 150, 150);
 	case tile_type::water:
 		return sf::Color(0, 0, 255);
+	case tile_type::dirt:
+		return sf::Color(137, 36, 0);
 	default:
 		return sf::Color(0, 0, 0);
 	}

@@ -2,6 +2,7 @@
 
 #include "camera.h"
 #include "game_logics.h"
+#include "texture_manager.h"
 #include <SFML/Graphics.hpp>
 
 class game_graphics
