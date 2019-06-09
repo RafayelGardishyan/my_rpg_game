@@ -19,8 +19,16 @@ void game_graphics::draw()
 		tile current = tiles.at(i);
 		sf::RectangleShape rect;
 		rect.setSize(sf::Vector2f(32, 32));
-		rect.setFillColor(get_tile_color(current.get_type()));
+		//rect.setFillColor(get_tile_color(current.get_type()));
+
+
 		rect.setPosition(sf::Vector2f((current.get_pos().x * 32) - m_camera.get_pos().x, (current.get_pos().y * 32) - m_camera.get_pos().x));
+
+		sf::Texture tx;
+
+		tx.loadFromFile(get_tile_texture(current.get_type()));
+
+		rect.setTexture(& tx);
 
 		if (i == m_game.selected_tile)
 		{

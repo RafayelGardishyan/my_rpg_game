@@ -19,6 +19,23 @@ sf::Color get_tile_color(tile_type type)
 	}
 }
 
+std::string get_tile_texture(tile_type type)
+{
+	switch (type)
+	{
+	case tile_type::grass:
+		return "textures/grass_texture.png";
+	case tile_type::stone:
+		return "textures/stone_texture.png";
+	case tile_type::water:
+		return "textures/water_texture.png";
+	case tile_type::dirt:
+		return "textures/dirt_texture.png";
+	default:
+		return "";
+	}
+}
+
 std::string get_tile_type_string(tile_type type)
 {
 	switch (type)
@@ -29,6 +46,8 @@ std::string get_tile_type_string(tile_type type)
 		return "stone";
 	case tile_type::water:
 		return "water";
+	case tile_type::dirt:
+		return "dirt";
 	default:
 		return "none";
 	}
