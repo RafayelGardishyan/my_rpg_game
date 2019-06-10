@@ -30,6 +30,7 @@ void game_graphics::draw()
 
 		rect.setTexture(& tx);
 
+
 		if (i == m_game.selected_tile)
 		{
 			rect.setOutlineColor(sf::Color(255, 255, 0));
@@ -38,6 +39,18 @@ void game_graphics::draw()
 
 		m_window.draw(rect);
 	}
+
+	sf::RectangleShape player_rect;
+	player_rect.setSize(sf::Vector2f(32, 32));
+
+	player playerobject = m_game.get_player();
+
+	player_rect.setPosition(playerobject.get_position());
+	if (clock.getElapsedTime().asSeconds() > 1.0f) {
+		player_rect.setTexture(&playerobject.get_next_frame());
+	}
+
+	m_window.draw(player_rect);
 
 	m_window.display();
 
@@ -64,8 +77,6 @@ void game_graphics::run()
 {
 	while (m_window.isOpen())
 	{
-		// Set deltatime
-		deltatime = clock.restart();
 
 		// Process events
 		sf::Event evnt;

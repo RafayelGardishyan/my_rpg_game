@@ -13,7 +13,6 @@ public:
 	void run();
 
 private:
-	sf::Time deltatime;
 	void draw();
 	void update();
 	sf::Clock clock;

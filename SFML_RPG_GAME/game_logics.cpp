@@ -57,6 +57,10 @@ void game_logics::create_map(std::vector<std::vector<tile_type>> map)
 	}
 }
 
+player& game_logics::get_player() {
+	return p;
+}
+
 void game_logics::process_mouse_events(sf::Event evnt)
 {
 	switch (evnt.type)
