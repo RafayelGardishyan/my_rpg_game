@@ -5,8 +5,13 @@ class player
 {
 public:
 	player();
-	sf::Texture get_next_frame();
 	sf::Vector2f get_position();
+	int get_frame_c();
+	void set_frame_c(int count);
+	void increase_frame_c();
+	std::string get_filename();
+	int get_dir();
+
 private:
 	int framecount;
 	double m_x;

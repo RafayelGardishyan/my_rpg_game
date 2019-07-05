@@ -47,7 +47,24 @@ void game_graphics::draw()
 
 	player_rect.setPosition(playerobject.get_position());
 	if (clock.getElapsedTime().asSeconds() > 1.0f) {
-		player_rect.setTexture(&playerobject.get_next_frame());
+
+		sf::Texture frame;
+		sf::IntRect frame_pos(playerobject.get_frame_c() * 32, 0, 32, 32);
+
+		sf::Image tx;
+
+		tx.loadFromFile(playerobject.get_filename());
+
+		frame.loadFromImage(tx, frame_pos);
+
+		if (playerobject.get_dir() == 0) {
+			if (playerobject.get_frame_c() - 3 >= 0) {
+				playerobject.set_frame_c(0);
+			}
+			else { playerobject.increase_frame_c(); }
+		}
+
+		player_rect.setTexture(&frame);
 	}
 
 	m_window.draw(player_rect);
